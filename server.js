@@ -1,5 +1,5 @@
 const express = require('express');
-const connectDB = require('./db');
+const connectDB = require('./config/db');
 const cors = require('cors');
 require('dotenv').config();
 
@@ -13,4 +13,7 @@ app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/scores', require('./routes/scoreRoutes'));
 app.use('/api/teams', require('./routes/teamRoutes'));
 
-module.exports = app; // Export the app instead of listening
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = app;
